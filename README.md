@@ -48,8 +48,8 @@ Ce projet analyse les données de **1,795 barres de chocolat** extraites depuis 
 
 ### 1. Installation
 ```bash
-git clone https://github.com/fatoumatasiby/etl-cacao
-cd etl-cacao
+git clone https://github.com/Fatoumata7703/package_ETL
+cd package_ETL
 pip install -r requirements.txt
 ```
 
