@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚙️ ETL Cacao - Transformations</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <!-- Navigation futuriste -->
+    <nav class="dashboard-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                <i class="fas fa-chart-line"></i>
+                </div>
+                <span>ETL Cacao</span>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/datasets" class="nav-link">Datasets</a>
+                <a href="/transformations" class="nav-link active">Transformations</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section héro -->
+    <section class="hero-dashboard">
+        <div class="container">
+            <div class="hero-content animate-in">
+                <div class="hero-badge animate-in animate-delay-1">
+                    <i class="fas fa-cogs"></i>
+                    <span>Pipeline ETL</span>
+            </div>
+                
+                <h1 class="hero-title animate-in animate-delay-2">
+                    Transformations
+            </h1>
+                
+                <p class="hero-subtitle animate-in animate-delay-2">
+                    5 grandes étapes de transformation
+                </p>
+                
+                <p class="hero-description animate-in animate-delay-3">
+                    Découvrez les 5 grandes étapes du pipeline ETL avec leurs sous-étapes : 
+                    de l'extraction brute au dataset final prêt pour l'analyse des chocolats.
+                    </p>
+                </div>
+        </div>
+    </section>
+
+    <!-- Pipeline visuel complet -->
+    <section class="container">
+        <h2 class="section-title animate-in">Pipeline de Transformation</h2>
+        
+        <!-- 5 Grandes Étapes -->
+        <div class="pipeline-steps">
+            <div class="pipeline-phase animate-in animate-delay-1">
+                <div class="phase-header">
+                    <div class="phase-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>1. Extraction</h3>
+                        </div>
+                <div class="phase-steps">
+                    <div class="step-item">
+                        <div class="step-number">1.1</div>
+                        <div class="step-content">
+                            <h4>Web Scraping</h4>
+                            <p>Extraction des données de 1,795 barres de chocolat depuis Codecademy</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            <div class="pipeline-phase animate-in animate-delay-2">
+                <div class="phase-header">
+                    <div class="phase-icon">
+                            <i class="fas fa-broom"></i>
+                        </div>
+                    <h3>2. Nettoyage</h3>
+                                </div>
+                <div class="phase-steps">
+                    <div class="step-item">
+                        <div class="step-number">2.1</div>
+                        <div class="step-content">
+                            <h4>Caractères Spéciaux</h4>
+                            <p>Suppression des caractères de contrôle et correction d'encodage</p>
+                            </div>
+                        </div>
+                    <div class="step-item">
+                        <div class="step-number">2.2</div>
+                        <div class="step-content">
+                            <h4>Normalisation</h4>
+                            <p>Uniformisation des chaînes de caractères et espaces</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            <div class="pipeline-phase animate-in animate-delay-3">
+                <div class="phase-header">
+                    <div class="phase-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                        </div>
+                    <h3>3. Conversion Types</h3>
+                                </div>
+                <div class="phase-steps">
+                    <div class="step-item">
+                        <div class="step-number">3.1</div>
+                        <div class="step-content">
+                            <h4>Pourcentages Cacao</h4>
+                            <p>Conversion des pourcentages de cacao en valeurs numériques</p>
+                            </div>
+                        </div>
+                    <div class="step-item">
+                        <div class="step-number">3.2</div>
+                        <div class="step-content">
+                            <h4>Dates et Évaluations</h4>
+                            <p>Transformation des dates et notes en types numériques</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            <div class="pipeline-phase animate-in animate-delay-1">
+                <div class="phase-header">
+                    <div class="phase-icon">
+                        <i class="fas fa-globe-americas"></i>
+                        </div>
+                    <h3>4. Uniformisation</h3>
+                                </div>
+                <div class="phase-steps">
+                    <div class="step-item">
+                        <div class="step-number">4.1</div>
+                        <div class="step-content">
+                            <h4>Noms de Pays</h4>
+                            <p>Standardisation des noms de pays en anglais</p>
+                            </div>
+                        </div>
+                    <div class="step-item">
+                        <div class="step-number">4.2</div>
+                        <div class="step-content">
+                            <h4>Origines Géographiques</h4>
+                            <p>Normalisation des origines de cacao et types de fèves</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            <div class="pipeline-phase animate-in animate-delay-2">
+                <div class="phase-header">
+                    <div class="phase-icon">
+                        <i class="fas fa-check-circle"></i>
+                        </div>
+                    <h3>5. Contrôle Qualité</h3>
+                                </div>
+                <div class="phase-steps">
+                    <div class="step-item">
+                        <div class="step-number">5.1</div>
+                        <div class="step-content">
+                            <h4>Imputation</h4>
+                            <p>Gestion des valeurs manquantes (888 "Unknown", 74 "Venezuela")</p>
+                            </div>
+                        </div>
+                    <div class="step-item">
+                        <div class="step-number">5.2</div>
+                        <div class="step-content">
+                            <h4>Validation Finale</h4>
+                            <p>Vérification des doublons et cohérence des données</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+    </section>
+
+    <!-- Détails des transformations -->
+    <section class="container">
+        <h2 class="section-title animate-in">Détails des Transformations</h2>
+        
+        <div class="dashboard-grid">
+            <!-- 1. Extraction -->
+            <div class="dashboard-card animate-in animate-delay-1">
+                <div class="card-header">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);">
+                        <i class="fas fa-download"></i>
+                        </div>
+                    <h3 class="card-title">1. Extraction</h3>
+                                </div>
+                <p class="card-description">
+                    Web scraping avec BeautifulSoup pour extraire les données de 1,795 barres de chocolat depuis Codecademy
+                </p>
+                <div class="card-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">1,795</span>
+                        <span class="stat-label">Barres</span>
+                            </div>
+                    <div class="stat-item">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Colonnes</span>
+                        </div>
+                    </div>
+                <div class="transformation-details">
+                    <h4>Sous-étapes :</h4>
+                    <ul>
+                        <li>1.1 - Web Scraping des données</li>
+                        <li>Extraction des évaluations et origines</li>
+                        <li>Récupération des pourcentages de cacao</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+            <!-- 2. Nettoyage -->
+            <div class="dashboard-card animate-in animate-delay-2">
+                <div class="card-header">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3 class="card-title">2. Nettoyage</h3>
+                </div>
+                <p class="card-description">
+                    Suppression des caractères spéciaux et normalisation des données de chocolat
+                </p>
+                <div class="card-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Sous-étapes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Nettoyé</span>
+                        </div>
+                    </div>
+                <div class="transformation-details">
+                    <h4>Sous-étapes :</h4>
+                    <ul>
+                        <li>2.1 - Suppression caractères spéciaux</li>
+                        <li>2.2 - Normalisation des chaînes</li>
+                        <li>Correction de l'encodage UTF-8</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+            <!-- 3. Conversion Types -->
+            <div class="dashboard-card animate-in animate-delay-3">
+                <div class="card-header">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3 class="card-title">3. Conversion Types</h3>
+                </div>
+                <p class="card-description">
+                    Transformation des types de données pour l'analyse des chocolats
+                </p>
+                <div class="card-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Sous-étapes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Types convertis</span>
+                        </div>
+                    </div>
+                <div class="transformation-details">
+                    <h4>Sous-étapes :</h4>
+                    <ul>
+                        <li>3.1 - Conversion pourcentages cacao</li>
+                        <li>3.2 - Conversion dates et évaluations</li>
+                        <li>String → Float/Integer</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+            <!-- 4. Uniformisation -->
+            <div class="dashboard-card animate-in animate-delay-1">
+                <div class="card-header">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3 class="card-title">4. Uniformisation</h3>
+                </div>
+                <p class="card-description">
+                    Standardisation des noms de pays et origines géographiques des cacaos
+                </p>
+                <div class="card-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Sous-étapes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">67</span>
+                        <span class="stat-label">Pays</span>
+                        </div>
+                    </div>
+                <div class="transformation-details">
+                    <h4>Sous-étapes :</h4>
+                    <ul>
+                        <li>4.1 - Standardisation noms de pays</li>
+                        <li>4.2 - Normalisation origines géographiques</li>
+                        <li>Uniformisation des types de fèves</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+            <!-- 5. Contrôle Qualité -->
+            <div class="dashboard-card animate-in animate-delay-2">
+                <div class="card-header">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="card-title">5. Contrôle Qualité</h3>
+                </div>
+                <p class="card-description">
+                    Imputation des valeurs manquantes et validation finale du dataset
+                </p>
+                <div class="card-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Sous-étapes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">962</span>
+                        <span class="stat-label">Valeurs imputées</span>
+                        </div>
+                    </div>
+                <div class="transformation-details">
+                    <h4>Sous-étapes :</h4>
+                    <ul>
+                        <li>5.1 - Imputation valeurs manquantes</li>
+                        <li>5.2 - Validation finale et doublons</li>
+                        <li>Contrôle de cohérence finale</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+    </section>
+
+                <!-- Résumé du pipeline -->
+    <section class="container">
+        <div class="pipeline-summary animate-in">
+            <h2 class="section-title">Résumé du Pipeline</h2>
+                    <div class="summary-grid">
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="summary-content">
+                        <span class="summary-number">5</span>
+                        <span class="summary-label">Grandes étapes</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="summary-content">
+                        <span class="summary-number">1,795</span>
+                        <span class="summary-label">Enregistrements traités</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                        <i class="fas fa-list"></i>
+                            </div>
+                            <div class="summary-content">
+                        <span class="summary-number">10</span>
+                        <span class="summary-label">Sous-étapes</span>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="summary-content">
+                        <span class="summary-number">100%</span>
+                        <span class="summary-label">Qualité finale</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer futuriste -->
+    <footer class="dashboard-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-chart-line"></i>
+                <span>ETL Cacao</span>
+            </div>
+            <div class="footer-links">
+                <a href="/">Dashboard</a>
+                <a href="/datasets">Datasets</a>
+                <a href="/transformations">Transformations</a>
+            </div>
+            <div class="footer-credits">
+                <p>Projet par <strong>Fatoumata Siby</strong></p>
+                <a href="https://github.com/fatoumatasiby/etl-cacao" target="_blank" class="github-link">
+                    <i class="fab fa-github"></i>
+                    Voir sur GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .pipeline-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .pipeline-phase {
+            background: var(--gradient-card);
+            border: 1px solid var(--dark-border);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-card);
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--dark-border);
+        }
+
+        .phase-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .phase-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .phase-header h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .phase-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: var(--dark-surface);
+            border-radius: 12px;
+            border: 1px solid var(--dark-border);
+            transition: var(--transition-smooth);
+        }
+
+        .step-item:hover {
+            border-color: var(--turquoise);
+            box-shadow: 0 0 20px rgba(32, 212, 212, 0.1);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-family: var(--font-mono);
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .step-content p {
+            color: #94a3b8;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .transformation-details {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--dark-border);
+        }
+
+        .transformation-details h4 {
+            color: var(--turquoise);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .transformation-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .transformation-details li {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .transformation-details li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--turquoise);
+            font-size: 0.7rem;
+        }
+
+        .pipeline-summary {
+            margin: 6rem 0;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .summary-card {
+            background: var(--gradient-card);
+            border: 1px solid var(--dark-border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            transition: var(--transition-smooth);
+        }
+
+        .summary-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .summary-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            box-shadow: var(--shadow-glow);
+        }
+
+        .summary-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .summary-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--turquoise);
+            font-family: var(--font-mono);
+            margin-bottom: 0.5rem;
+        }
+
+        .summary-label {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .pipeline-steps {
+                gap: 2rem;
+            }
+            
+            .phase-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .summary-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+
+    <script>
+        // Animation d'entrée des éléments
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Animation des cartes au survol
+        document.querySelectorAll('.dashboard-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
