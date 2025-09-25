@@ -158,4 +158,4 @@ gunicorn -w 4 -b 0.0.0.0:5000 app:app
 
 **Projet Data Engineering Complet** - Pipeline ETL + Dashboard Web Moderne
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/fatoumatasiby/etl-cacao)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/Fatoumata7703/package_ETL)
