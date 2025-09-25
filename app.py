@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-🍫 ETL CACAO - LE PLUS BEAU SITE DU MONDE
+ETL CACAO - LE PLUS BEAU SITE DU MONDE
 Pipeline Data Engineering pour l'analyse des données de cacao
 """
 
@@ -36,19 +36,19 @@ DATASETS_PATH = {
 @app.route('/')
 def index():
     """Page d'accueil - Dashboard futuriste ETL Cacao"""
-    logger.info("🚀 Accès au dashboard principal")
+    logger.info(" Accès au dashboard principal")
     return render_template('index.html')
 
 @app.route('/datasets')
 def datasets():
     """Page des datasets - Dashboard futuriste"""
-    logger.info("📊 Accès à la page des datasets")
+    logger.info(" Accès à la page des datasets")
     return render_template('datasets.html')
 
 @app.route('/transformations')
 def transformations():
     """Page des transformations - Dashboard futuriste"""
-    logger.info("⚙️ Accès à la page des transformations")
+    logger.info(" Accès à la page des transformations")
     return render_template('transformations.html')
 
 
@@ -90,7 +90,7 @@ def get_datasets():
         })
         
     except Exception as e:
-        logger.error(f"❌ Erreur lors de la récupération des datasets: {e}")
+        logger.error(f" Erreur lors de la récupération des datasets: {e}")
         return jsonify({
             'success': False,
             'error': str(e)
@@ -126,7 +126,7 @@ def get_dataset_preview(dataset_type):
         })
         
     except Exception as e:
-        logger.error(f"❌ Erreur lors de la récupération du dataset {dataset_type}: {e}")
+        logger.error(f" Erreur lors de la récupération du dataset {dataset_type}: {e}")
         return jsonify({
             'success': False,
             'error': str(e)
@@ -144,7 +144,7 @@ def download_dataset(dataset_type):
         if not os.path.exists(file_path):
             return jsonify({'error': 'Fichier non trouvé'}), 404
         
-        logger.info(f"📥 Téléchargement du dataset {dataset_type}")
+        logger.info(f" Téléchargement du dataset {dataset_type}")
         
         return send_file(
             file_path,
@@ -154,7 +154,7 @@ def download_dataset(dataset_type):
         )
         
     except Exception as e:
-        logger.error(f"❌ Erreur lors du téléchargement du dataset {dataset_type}: {e}")
+        logger.error(f" Erreur lors du téléchargement du dataset {dataset_type}: {e}")
         return jsonify({
             'success': False,
             'error': str(e)
@@ -199,7 +199,7 @@ def get_pipeline_status():
         })
         
     except Exception as e:
-        logger.error(f"❌ Erreur lors de la récupération du statut du pipeline: {e}")
+        logger.error(f" Erreur lors de la récupération du statut du pipeline: {e}")
         return jsonify({
             'success': False,
             'error': str(e)
@@ -268,7 +268,7 @@ def get_transformations():
         })
         
     except Exception as e:
-        logger.error(f"❌ Erreur lors de la récupération des transformations: {e}")
+        logger.error(f" Erreur lors de la récupération des transformations: {e}")
         return jsonify({
             'success': False,
             'error': str(e)
@@ -286,7 +286,7 @@ def not_found(error):
 @app.errorhandler(500)
 def internal_error(error):
     """Page 500 personnalisée"""
-    logger.error(f"❌ Erreur interne: {error}")
+    logger.error(f" Erreur interne: {error}")
     return jsonify({
         'success': False,
         'error': 'Erreur interne du serveur'
@@ -305,10 +305,10 @@ def check_datasets_exist():
             missing_files.append(f"{dataset_type}: {file_path}")
     
     if missing_files:
-        logger.warning(f"⚠️ Fichiers manquants: {missing_files}")
+        logger.warning(f" Fichiers manquants: {missing_files}")
         return False
     
-    logger.info("✅ Tous les datasets sont présents")
+    logger.info(" Tous les datasets sont présents")
     return True
 
 def get_dataset_stats(file_path):
@@ -330,7 +330,7 @@ def get_dataset_stats(file_path):
             'null_counts': df.isnull().sum().to_dict()
         }
     except Exception as e:
-        logger.error(f"❌ Erreur lors de l'analyse du dataset {file_path}: {e}")
+        logger.error(f" Erreur lors de l'analyse du dataset {file_path}: {e}")
         return None
 
 # ===========================================
@@ -339,18 +339,18 @@ def get_dataset_stats(file_path):
 
 def initialize_app():
     """Initialisation de l'application"""
-    logger.info("🍫 Initialisation de ETL Cacao...")
+    logger.info(" Initialisation de ETL Cacao...")
     
     # Vérifier les datasets
     if not check_datasets_exist():
-        logger.warning("⚠️ Certains datasets sont manquants")
+        logger.warning(" Certains datasets sont manquants")
     
     # Créer les dossiers nécessaires
     os.makedirs('data/raw', exist_ok=True)
     os.makedirs('data/interim', exist_ok=True)
     os.makedirs('data/processed', exist_ok=True)
     
-    logger.info("✅ ETL Cacao initialisé avec succès!")
+    logger.info(" ETL Cacao initialisé avec succès!")
 
 # Initialiser l'application au démarrage
 initialize_app()
@@ -361,12 +361,12 @@ initialize_app()
 
 if __name__ == '__main__':
     print("""
-    🍫 ETL CACAO - LE PLUS BEAU SITE DU MONDE
+     ETL CACAO - LE PLUS BEAU SITE DU MONDE
     ==========================================
     
-    🚀 Démarrage du serveur Flask...
-    📊 Pipeline Data Engineering pour le cacao
-    🌐 Site: http://localhost:5000
+     Démarrage du serveur Flask...
+     Pipeline Data Engineering pour le cacao
+     Site: http://localhost:5000
     
     """)
     
